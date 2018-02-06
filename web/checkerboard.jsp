@@ -17,10 +17,17 @@
 <div id="chessboard">
 
 
-    <% int length = 5; %>
-    <% int width = 5; %>
+    <%--<% int length = 5; %>--%>
+    <%--<% int width = 5; %>--%>
 
+    <% String strLength = request.getParameter("length"); %>
+    <% String strWidth = request.getParameter("width"); %>
 
+    <% if (strLength == null) { strLength = "0"; } %>
+    <% if (strWidth == null) { strWidth = "0"; } %>
+
+    <% int length = Integer.parseInt(strLength); %>
+    <% int width = Integer.parseInt(strWidth); %>
 
     <% int[][] checkerboard = new int[length][width]; %>
 
